@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+  <style>
+  body {
+  background-image: url("bees.jpg");
+  }
+  </style>
+
+  <body>
+
+  
+
+  </body>
+
+<script src="bees.js">
+</script>
+
+
+
+</html>

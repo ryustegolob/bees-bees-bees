@@ -1,10 +1,11 @@
 var mouseX;
 var mouseY;
 
-window.addEventListener('mousemove', setXY)
-
-var setXY = function(e){
+//get the x and y coordinates
+window.addEventListener('mousemove', function(e){ 
     mouseX = e.pageX;
-    mouseY = e.pageY;
-};
+    mouseY = e.pageY;})
+
+
+
 
