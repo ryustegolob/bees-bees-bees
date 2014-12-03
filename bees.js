@@ -1,11 +1,49 @@
 var mouseX;
 var mouseY;
+var distance;
+var x;
+var y;
+var image = document.getElementById("hidden")
 
 //get the x and y coordinates
 window.addEventListener('mousemove', function(e){ 
     mouseX = e.pageX;
-    mouseY = e.pageY;})
+    mouseY = e.pageY;
+    distance = ((mouseX - x)^2 + (mouseY - y)^2)^(0.5);
+    //console.log(distance);
+})
+
+//randomly position
+var rand = function(){
+    var xRand = Math.random();
+    var yRand = Math.random();
+    x = xRand * screen.width;
+    y = yRand * screen.height;
+    image.style.left = x + "px";
+    image.style.top = y + "px";
+    console.log(x);
+}
 
 
+var looking = function(){ 
+    this.style.cursor = "pointer";
+    
+}
 
+var found = function(){
+    
+    
+}
+
+var play = function(){
+    
+    
+}
+
+window.addEventListener('mouseover', play);
+image.addEventListener('mouseover', looking);
+image.addEventListener('click', found);
+
+
+rand();
 
