@@ -1,16 +1,15 @@
-var mouseX;
-var mouseY;
+var mouseX, mouseY;
 var distance;
-var x;
-var y;
-var image = document.getElementById("hidden")
+var x, y;
+var image = document.getElementById("hidden");
+var myevent;
 
 //get the x and y coordinates
 window.addEventListener('mousemove', function(e){ 
     mouseX = e.pageX;
     mouseY = e.pageY;
     distance = ((mouseX - x)^2 + (mouseY - y)^2)^(0.5);
-    //console.log(distance);
+    console.log(distance);
 })
 
 //randomly position
@@ -25,8 +24,15 @@ var rand = function(){
 }
 
 
+//the curson looks like a clicker when you click on oprah
 var looking = function(){ 
     this.style.cursor = "pointer";
+}
+
+
+
+var play = function(){
+    console.log("play");
     
 }
 
@@ -34,20 +40,23 @@ var found = function(){
     var background = document.getElementById("body");
 
     background.style.backgroundImage = "url('oprah.jpg')";
-    image.style.visibility = "hidden"
+    image.style.visibility = "hidden";
+   
+    clearInterval(myevent);
     
     console.log("found");
 }
 
-var play = function(){
-    
-    
-}
-
 rand(); //sets up the page
+
+myevent = setInterval(play, 1000);
 
 window.addEventListener('mouseover', play);
 image.addEventListener('mouseover', looking);
+
 image.addEventListener('click', found);
+
+
+
 
 
