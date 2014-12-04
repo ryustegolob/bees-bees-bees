@@ -2,7 +2,7 @@ var mouseX, mouseY;
 var distance;
 var x, y;
 var image = document.getElementById("hidden");
-var sound = document.getElementById("bees");
+var sound;
 var myevent;
 
 //get the x and y coordinates
@@ -10,6 +10,7 @@ window.addEventListener('mousemove', function(e){
     mouseX = e.pageX;
     mouseY = e.pageY;
     distance = ((mouseX - x)^2 + (mouseY - y)^2)^(0.5);
+    distance = Math.abs(distance);
     console.log(distance);
 })
 
@@ -21,7 +22,7 @@ var rand = function(){
     y = yRand * screen.height;
     image.style.left = x + "px";
     image.style.top = y + "px";
-    console.log(x);
+    //console.log(x);
 }
 
 
@@ -33,8 +34,15 @@ var looking = function(){
 
 
 var play = function(){
+    if (distance > 500) {
+	sound = document.getElementById("first");
+    } else if (distance > 50) {
+	sound = document.getElementById("second");
+    } else {
+	sound = document.getElementById("third");
+    }
     sound.play();
-    console.log("play");
+   // console.log("play");
     
 }
 
@@ -51,7 +59,7 @@ var found = function(){
 
 rand(); //sets up the page
 
-myevent = setInterval(play, 1000);
+myevent = setInterval(play, 100);
 
 window.addEventListener('mouseover', play);
 image.addEventListener('mouseover', looking);
