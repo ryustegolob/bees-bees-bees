@@ -31,8 +31,12 @@ var looking = function(){
 }
 
 var found = function(){
+    var background = document.getElementById("body");
+
+    background.style.backgroundImage = "url('oprah.jpg')";
+    image.style.visibility = "hidden"
     
-    
+    console.log("found");
 }
 
 var play = function(){
@@ -40,10 +44,10 @@ var play = function(){
     
 }
 
+rand(); //sets up the page
+
 window.addEventListener('mouseover', play);
 image.addEventListener('mouseover', looking);
 image.addEventListener('click', found);
 
-
-rand();
 
