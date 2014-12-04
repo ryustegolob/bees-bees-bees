@@ -2,6 +2,7 @@ var mouseX, mouseY;
 var distance;
 var x, y;
 var image = document.getElementById("hidden");
+var sound = document.getElementById("bees");
 var myevent;
 
 //get the x and y coordinates
@@ -32,6 +33,7 @@ var looking = function(){
 
 
 var play = function(){
+    sound.play();
     console.log("play");
     
 }
